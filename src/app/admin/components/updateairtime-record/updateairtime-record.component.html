@@ -1,0 +1,91 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Edit Vouchers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="login-section ion-padding">
+    <form [formGroup]="form" (ngSubmit)="saveDetails()">
+
+      <div class="login-form inputs">
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Voucher network</ion-label>
+            <ion-input [(ngModel)]="airtimeTpye" placeholder="Network: Telkom" class="form-input" type="text"
+              formControlName="airtimeNetwork"></ion-input>
+          </ion-item>
+          <small
+            *ngIf="form.get('airtimeNetwork').invalid && (form.get('airtimeNetwork').dirty ||form.get('airtimeNetwork').touched )">
+            <small *ngIf="(form.get('airtimeNetwork')).errors?.required" class="fields">This field is required</small>
+            <small *ngIf="(form.get('airtimeNetwork')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Voucher type</ion-label>
+            <ion-input [(ngModel)]="voucherType" class="form-input" placeholder="Prepaid airtime or databundle"
+              type="text" formControlName="prepaidVoucher"></ion-input>
+          </ion-item>
+          <small
+            *ngIf="form.get('prepaidVoucher').invalid && (form.get('prepaidVoucher').dirty ||form.get('prepaidVoucher').touched )">
+            <small *ngIf="(form.get('prepaidVoucher')).errors?.required" class="fields">This field is required</small>
+            <small *ngIf="(form.get('prepaidVoucher')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Voucher number</ion-label>
+            <ion-input [(ngModel)]="voucherCode" placeholder="voucher pin" class="form-input" type="numeric"
+              formControlName="voucherNumber"></ion-input>
+          </ion-item>
+          <small
+            *ngIf="form.get('voucherNumber').invalid && (form.get('voucherNumber').dirty ||form.get('voucherNumber').touched )">
+            <small *ngIf="(form.get('voucherNumber')).errors?.required" class="fields">This field is required</small>
+            <small *ngIf="(form.get('voucherNumber')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Time update</ion-label>
+            <ion-input [(ngModel)]="timeUpdate" class="form-input" type="numeric" formControlName="timeUpdates">
+            </ion-input>
+          </ion-item>
+          <small
+            *ngIf="form.get('timeUpdates').invalid && (form.get('timeUpdates').dirty ||form.get('timeUpdates').touched )">
+            <small *ngIf="(form.get('timeUpdates')).errors?.required" class="fields">This field is required</small>
+            <small *ngIf="(form.get('timeUpdates')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+        <div class="login-form inputs">
+          <div class="action-buttons">
+            <ion-button [disabled]="!form.valid" type="submit" mode="ios" class="signin-btn" expand="block"
+              color="success" (click)="UpdateRecord(type, airtimeTpye, voucherType, voucherCode, timeUpdate)">Update
+            </ion-button>
+
+            <ion-button mode="ios" class="signin-btn" expand="block" color="danger" (click)="CloseModal()">Cancel
+            </ion-button>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+</ion-content>

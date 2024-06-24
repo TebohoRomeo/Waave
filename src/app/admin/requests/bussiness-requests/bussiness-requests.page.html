@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Bussiness Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="items" class="list-mini-content" class="ion-padding ion-text-center">
+  <div *ngIf="items.length > 0" class="list-mini">
+
+    <div class="scroll" scrollX="true">
+      <table class="styled-table ">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Phone</th>
+            <th>Email Address</th>
+            <th>Bussiness Name</th>
+            <th>Bussiness Email</th>
+            <th>website</th>
+            <th>Reviewed</th>
+            <th>Paid</th>
+            <th>Live</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items" [routerLink]="['/bussiness-req-info', item.payload.doc.id]">
+            <td>{{item.payload.doc.data().name}}</td>
+            <td>{{item.payload.doc.data().lastName}}</td>
+            <td>{{item.payload.doc.data().phone}}</td>
+            <td>{{item.payload.doc.data().email}}</td>
+            <td>{{item.payload.doc.data().companyName}}</td>
+            <td>{{item.payload.doc.data().bemail}}</td>
+            <td>{{item.payload.doc.data().website}}</td>
+            <td>{{item.payload.doc.data().reviewed}}</td>
+            <td>{{item.payload.doc.data().paid}}</td>
+            <td>{{item.payload.doc.data().live}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</ion-content>

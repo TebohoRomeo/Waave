@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Amount Raised</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="login-section ion-padding">
+    <form [formGroup]="form" (ngSubmit)="saveDetails()">
+      <div class="login-form inputs">
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Description</ion-label>
+            <ion-input class="form-input" [(ngModel)]="addrecord.story" formControlName="story" class="form-input"
+              type="text">
+            </ion-input>
+          </ion-item>
+          <small *ngIf="form.get('story').invalid && (form.get('story').dirty ||form.get('story').touched )">
+            <small *ngIf="(form.get('story')).errors?.required" class="fields">This field is required</small>
+          </small>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Raised cash</ion-label>
+            <ion-input [(ngModel)]="addrecord.amount" class="form-input" type="text" formControlName="amount">
+            </ion-input>
+          </ion-item>
+          <small *ngIf="form.get('amount').invalid && (form.get('amount').dirty ||form.get('amount').touched )">
+            <small *ngIf="(form.get('amount')).errors?.required" class="fields">This field is required</small>
+          </small>
+        </div>
+
+        <div class="login-form inputs">
+          <div class="action-buttons">
+            <ion-button [disabled]="!form.valid" type="submit" mode="ios" class="signin-btn"
+              (click)="AddRecord(addrecord.story, addrecord.amount)">
+              Upload
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

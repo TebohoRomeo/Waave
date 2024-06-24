@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="login-section ion-padding">
+    <form [formGroup]="form" (ngSubmit)="saveDetails()">
+
+      <div class="login-form inputs">
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">story</ion-label>
+            <ion-input [(ngModel)]="story" placeholder="story" class="form-input" type="text"
+              formControlName="story"></ion-input>
+          </ion-item>
+          <small
+            *ngIf="form.get('story').invalid && (form.get('story').dirty ||form.get('story').touched )">
+            <small *ngIf="(form.get('story')).errors?.required" class="fields">This field is required</small>
+          </small>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Amount</ion-label>
+            <ion-input [(ngModel)]="amount" class="form-input" placeholder="amount" type="number"
+              formControlName="amount"></ion-input>
+          </ion-item>
+          <small *ngIf="form.get('amount').invalid && (form.get('amount').dirty ||form.get('amount').touched )">
+            <small *ngIf="(form.get('amount')).errors?.required" class="fields">This field is required</small>
+          </small>
+        </div>
+
+
+        <div class="login-form inputs">
+          <div class="action-buttons">
+            <ion-button [disabled]="!form.valid" type="submit" mode="ios" class="signin-btn" expand="block"
+              color="success" (click)="UpdateRecord(story, amount)">Update
+            </ion-button>
+
+            <ion-button mode="ios" class="signin-btn" expand="block" color="danger" (click)="CloseModal()">Cancel
+            </ion-button>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+</ion-content>

@@ -1,0 +1,92 @@
+ion-content {
+  --background: #222428;
+}
+
+.header {
+  --background: #222428;
+}
+
+.titles {
+  --color: #16994a;
+}
+
+.responsive {
+  max-width: 800px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.cards {
+  border-radius: 10px;
+  background: #363636;
+  width: 90%;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 7px;
+  margin-bottom: 10px;
+  height: 130px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ion-icon {
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+img {
+  height: 50px;
+  margin-top: 20px;
+}
+
+.title {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.custom-skeleton ion-skeleton-text {
+  border-radius: 10px;
+}
+
+.create-campaign {
+  min-height: 500;
+  height: 130px;
+  background-color: #ffffff;
+  margin: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.create-campaign ion-button {
+  --background: #1d924c;
+  font-weight: 400;
+  height: 35px;
+  float: right;
+  --border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.create-campaign img {
+  height: 6rem;
+  border-radius: 5px;
+  margin: 5px;
+  margin-left: 25px;
+  width: 6rem;
+}
+
+.create-campaign p {
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}

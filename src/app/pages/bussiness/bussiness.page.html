@@ -1,0 +1,78 @@
+<ion-header class="ion-no-border">
+  <!-- <ion-toolbar class="header">
+    <ion-buttons slot="end">
+      <ion-label class="end-btn" (click)="gotoDonate()" slot="end">
+        <ion-icon name="cash-outline" slot="end" class="top-icons"></ion-icon>
+      </ion-label>
+    </ion-buttons>
+  </ion-toolbar> -->
+  <ion-toolbar class="ion-no-border header">
+    <ion-searchbar mode="ios" disabled="true" debounce="500" animated placeholder="Search Bussiness">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollEvents="{true}" fullscreen="true">
+  <div class="responsive">
+    <div *ngIf="data">
+      <div class="create-campaign">
+        <ion-row>
+          <ion-col size="5">
+            <img src="../../../assets/icon/marketing.png" />
+          </ion-col>
+
+          <ion-col>
+            <p>Let's help you promote your bussiness</p>
+            <ion-button mode="ios" expand="block" (click)="goToCreatePost()">Promote
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+    <div lines="inset" *ngIf="items">
+      <div *ngIf="items.length > 0">
+        <div *ngFor="let item of items" [routerLink]="['/bussiness-details', item.payload.doc.id]">
+          <div class="campaing-live">
+            <div class="image">
+              <img [src]="item.payload.doc.data().image" />
+            </div>
+
+            <ion-row>
+              <ion-label class="name">
+                {{item.payload.doc.data().name}}
+              </ion-label>
+              <ion-label class="badge">
+                <img src="../../../assets/icon/Verified_Badge.png" />
+              </ion-label>
+            </ion-row>
+
+            <div class="about">
+              <ion-label class="abt-cmp"> About : </ion-label>
+              <ion-label class="abt-description">
+                {{item.payload.doc.data().summaryAboutCompany}}
+              </ion-label>
+            </div>
+
+            <div class="about web">
+              <ion-label class="abt-cmp"> Website: </ion-label>
+              <ion-label class="abt-description website">
+                <a>{{item.payload.doc.data().website}}</a>
+              </ion-label>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!data">
+      <div class="ion-padding custom-skeleton">
+        <ion-skeleton-text animated style="width: 100%; height: 130px" slot="start"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 100%; height: 200px" slot="start"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 100%; height: 200px" slot="start"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 100%; height: 200px" slot="start"></ion-skeleton-text>
+      </div>
+    </div>
+  </div>
+</ion-content>

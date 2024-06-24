@@ -1,0 +1,292 @@
+ion-header {
+  ion-toolbar {
+      --background: #222428;
+      background: #222428;
+      // .bordered {
+      //     --border-radius: 10px;
+      //     --box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff
+      // }
+  }
+
+  ion-title {
+      text-align: center;
+  }
+}
+
+.hello-text {
+  font-weight: 900;
+  font-size: 30px;
+  color: #f2f2f2;
+  padding-left: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.user-name {
+  font-weight: 500;
+  font-size: 15px;
+  color: #f2f2f2;
+  background: #222428;
+  height: 25px;
+  padding-top: 2px;
+  padding-left: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.end-btn {
+  margin-top: 5px;
+}
+
+.custom-skeleton ion-skeleton-text {
+  border-radius: 10px;
+}
+
+.toolbar-color {
+  --background: #222428;
+}
+
+.top-icons {
+  color: #f2f2f2;
+}
+
+ion-list {
+  --background: #222428;
+}
+
+ion-content {
+  --background: #222428;
+}
+
+.responsive {
+  max-width: 800px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.custom-skeleton ion-skeleton-text {
+  border-radius: 10px;
+}
+
+.description {
+  font-weight: 500;
+  color: #000;
+  font-size: 16px;
+  margin-top: -2px;
+  padding-left: 5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+ion-card {
+  background: #ffffff;
+  margin-bottom: 55px;
+  border-radius: 10px;
+}
+
+.create-campaign {
+  min-height: 500;
+  height: 130px;
+  background-color: #ffffff;
+  margin: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.create-campaign ion-button {
+  --background: #16994a;
+  font-weight: 400;
+  height: 35px;
+  float: right;
+  --border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.create-campaign img {
+  height: 6rem;
+  border-radius: 5px;
+  margin: 5px;
+  margin-left: 25px;
+  width: 6rem;
+}
+
+.create-campaign p {
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ion-slides {
+  height: 100%;
+}
+
+.wide-item {
+  width: 10000px;
+}
+ion-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+  width: 100%;
+}
+
+div.stretchy-wrapper {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+div.stretchy-wrapper > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  font-size: 100% 100%;
+  text-align: center;
+}
+
+.card-color {
+  background: #93ff85be;
+}
+
+.card-color-two {
+  background: #ff8585be;
+}
+
+.card-color-three {
+  background: #ff85f9be;
+}
+
+.card-color-four {
+  background: #85b0ffbe;
+}
+
+.card-color-five {
+  background: #aa85ffbe;
+}
+
+.campaigns {
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 10rem;
+  height: 20rem;
+  margin: 10px;
+}
+
+.campaigns img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 11rem;
+  width: 100%;
+}
+
+.card-info img {
+  height: 50px;
+  margin: 1px;
+  margin-bottom: 8px;
+  width: 50px;
+}
+
+.cash-title {
+  color: rgb(92, 92, 92);
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: -5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.cash-title-two {
+  color: #127439;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: -5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.card-info p {
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  margin: 3px;
+  margin-top: -20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.money {
+  margin-top: -5px;
+}
+
+.campaing-live {
+  margin-bottom: 4.5rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 5px;
+  height: 100%;
+}
+
+.campaing-live img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0 auto;
+  height: auto;
+  max-width: 100%;
+  border: none;
+  display: block;
+  padding: 0px 0;
+  margin-bottom: 5px;
+}
+
+
+.message {
+  font-size: 15px;
+}
+
+h5 {
+  color: #16994a;
+}
+
+.text {
+  height: 160px;
+  background: #2f3135;
+  color: rgb(153, 153, 153);
+  margin: 5px;
+  margin-top: 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.money{
+  font-size: 30px;
+  padding-top: 20px;
+  color: #fff;
+  font-weight: 700;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.action-buttons {
+  text-align: center;
+
+  ion-button {
+    --border-radius: 20px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 17px;
+    height: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+}

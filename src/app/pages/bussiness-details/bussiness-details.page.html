@@ -1,0 +1,168 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="titles"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="titles"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="responsive">
+
+  <div class="user-img">
+    <img [src]="image" alt="this is the image">
+   
+  </div>
+
+  <div class="details-page">
+    <ion-row>
+      <ion-label class="name">
+        {{name}}
+      </ion-label>
+      <ion-label class="badge">
+        <img src="../../../assets/icon/Verified_Badge.png" />
+      </ion-label>
+    </ion-row>
+
+    <div class="about">
+      <ion-label class="abt-cmp">
+        About :
+      </ion-label>
+      <ion-label class="abt-description">
+        {{aboutCompany}}
+      </ion-label>
+
+      <br>
+       <br>
+      <ion-row>
+        <ion-label class="products">
+          Our Products
+        </ion-label>
+      </ion-row>
+      <br>
+    </div>
+
+    <ion-slides pager="false" [options]="slideOpts" mode="ios">
+      <ion-slide>
+        <ion-card class="ion-activatable card-color ripple-parent">
+          <ion-ripple-effect></ion-ripple-effect>
+          <div class="stretchy-wrapper">
+            <div>
+              <div style="
+                  display: table;
+                  overflow: hidden;
+                ">
+                  <div class="card-info">                   
+                     <img [src]="productOne" alt="Our products">
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="ion-activatable card-color-two ripple-parent">
+          <ion-ripple-effect></ion-ripple-effect>
+          <div class="stretchy-wrapper">
+            <div>
+              <div style="
+                  display: table;
+                  overflow: hidden;
+                ">
+         
+                  <div class="card-info">
+                    <img [src]="productTwo" alt="Our products">
+                  </div>
+                </div>
+            </div>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="ion-activatable card-color-three ripple-parent">
+          <ion-ripple-effect></ion-ripple-effect>
+          <div class="stretchy-wrapper">
+            <div>
+              <div style="
+                  display: table;
+                  overflow: hidden;
+                ">
+                    <div class="card-info">
+                      <img [src]="producthree" alt="Our products">
+                    </div>
+                </div>
+            </div>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="ion-activatable card-color-four ripple-parent">
+          <ion-ripple-effect></ion-ripple-effect>
+          <div class="stretchy-wrapper">
+            <div>
+              <div style="
+                  display: table;
+                  overflow: hidden;
+                ">
+                    <div class="card-info">
+                      <img [src]="productfour" alt="Our products">
+                    </div>
+              </div>
+            </div>
+          </div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon class="data" name="location" color="primary"></ion-icon>
+      </ion-col>
+      <ion-col class="info">
+        {{location}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon class="data" color="primary" name="call"></ion-icon>
+      </ion-col>
+      <ion-col class="info">
+        {{call}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon class="data" color="primary" name="mail"></ion-icon>
+      </ion-col>
+      <ion-col class="info">
+        {{email}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="1">
+        <ion-icon class="data" color="primary" name="code-slash"></ion-icon>
+      </ion-col>
+      <ion-col class="info">
+        <a href="{{website}}">
+          {{website}}
+        </a>
+
+      </ion-col>
+    </ion-row>
+    
+  </div>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <a href="https://wa.me/{{wapp}}">
+    <ion-fab-button>   
+        <ion-icon name="logo-whatsapp"></ion-icon>
+    </ion-fab-button>
+  </a>
+  </ion-fab>
+</ion-content>

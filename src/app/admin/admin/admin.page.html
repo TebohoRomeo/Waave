@@ -1,0 +1,126 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar  class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Admin panel</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" mode="ios">
+
+  <ion-item lines="none">
+    <ion-label class="settings">
+      Upload here
+    </ion-label>
+  </ion-item>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToUplAirtime()">
+      <label class="label">Prepaid airtime & Data</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)=" goToUplFund()">
+      <label class="label">Fundraiser</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToUplBussiness()">
+      <label class="label">Local bussiness</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToUplUpdates()">
+      <label class="label">Updates</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <ion-item lines="none">
+    <ion-label class="settings">
+      View Uploaded
+    </ion-label>
+  </ion-item>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToViewAirtime()">
+      <label class="label">Prepaid airtime & Data</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToViewFund()">
+      <label class="label">Fundraiser</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToViewBussiness()">
+      <label class="label">Local bussiness</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToViewUpdates()">
+      <label class="label">Updates</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <ion-item lines="none">
+    <ion-label class="settings">
+      View Requests
+    </ion-label>
+  </ion-item>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToBreq()">
+      <label class="label">Bussiness Request</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToFreq()">
+      <label class="label">Fundraiser Request</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+
+  <ion-item lines="none">
+    <ion-label class="settings">
+      Raised cash
+    </ion-label>
+  </ion-item>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToraisedcash()">
+      <label class="label">Donations</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="buttons">
+    <ion-item lines="none" button class="button" (click)="goToraisedcashedit()">
+      <label class="label">Donations Edit</label>
+      <ion-icon name="chatbubble-ellipses-outline" slot="start" class="user-icon"></ion-icon>
+    </ion-item>
+  </div>
+
+</ion-content>
+
+

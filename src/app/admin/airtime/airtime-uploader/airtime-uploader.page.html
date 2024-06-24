@@ -1,0 +1,96 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Upload Airtime</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="login-section ion-padding">
+    <form [formGroup]="form" (ngSubmit)="saveDetails()">
+
+      <div class="login-form inputs">
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Voucher network</ion-label>     
+              <ion-select class="form-input"  formControlName="airtimeNetwork" [(ngModel)]="addrecord.airtimeTpye"  class="form-input" type="text"slot="end">
+                <ion-select-option value="Mtn">Mtn</ion-select-option>
+                <ion-select-option value="Vodacom">Vodacom</ion-select-option>
+                <ion-select-option value="Cell C">Cell C</ion-select-option>
+                <ion-select-option value="Telkom">Telkom</ion-select-option>
+                <ion-select-option value="Any Network">Any Network</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <small
+            *ngIf="form.get('airtimeNetwork').invalid && (form.get('airtimeNetwork').dirty ||form.get('airtimeNetwork').touched )">
+            <small *ngIf="(form.get('airtimeNetwork')).errors?.required" class="fields">This field is required</small>
+            <small *ngIf="(form.get('airtimeNetwork')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+  
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Voucher type</ion-label>
+              <ion-select class="form-input"  [(ngModel)]="addrecord.voucherType" formControlName="prepaidVoucher" class="form-input" type="text"slot="end">
+                <ion-select-option value="Data bundles">Data Bundles</ion-select-option>
+                <ion-select-option value="Airtime">Airtime</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <small
+            *ngIf="form.get('prepaidVoucher').invalid && (form.get('prepaidVoucher').dirty ||form.get('prepaidVoucher').touched )">
+            <small *ngIf="(form.get('prepaidVoucher')).errors?.required" class="fields">This field is required</small>
+            <small *ngIf="(form.get('prepaidVoucher')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Voucher number</ion-label>
+            <ion-input [(ngModel)]="addrecord.voucherCode" placeholder="voucher pin" class="form-input" type="numeric"
+              formControlName="voucherNumber"></ion-input>
+          </ion-item>
+          <small
+            *ngIf="form.get('voucherNumber').invalid && (form.get('voucherNumber').dirty ||form.get('voucherNumber').touched )">
+            <small *ngIf="(form.get('voucherNumber')).errors?.required" class="fields">This field is required</small>
+            <small *ngIf="(form.get('voucherNumber')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Time update</ion-label>
+            <ion-input [(ngModel)]="addrecord.timeUpdate" class="form-input" type="text"
+              placeholder="12:00 | fri, march" formControlName="timeUpdates"></ion-input>
+          </ion-item>
+          <small
+            *ngIf="form.get('timeUpdates').invalid && (form.get('timeUpdates').dirty ||form.get('timeUpdates').touched )">
+            <small *ngIf="(form.get('timeUpdates')).errors?.required" class="fields">This field is required</small>
+            <small *ngIf="(form.get('timeUpdates')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+        <div class="login-form inputs">
+          <div class="action-buttons">
+            <ion-button [disabled]="!form.valid" type="submit" mode="ios" class="signin-btn"
+              (click)="AddRecord(addrecord.type, addrecord.airtimeTpye, addrecord.voucherType, addrecord.voucherCode, addrecord.timeUpdate)">
+              Upload Voucher
+            </ion-button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+</ion-content>

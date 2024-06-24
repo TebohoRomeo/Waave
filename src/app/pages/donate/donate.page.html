@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Donate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollEvents={true} fullscreen="true">
+
+  <div class="text ion-padding ion-text-center">
+    <ion-label class="message">
+      It's not the amount that matters but the meaning behind your donation.
+    </ion-label>
+
+    <h5 class="ion-text-center">#MakeAChange</h5>
+  </div>
+
+  <div class="login-section ion-padding">
+    <form [formGroup]="form" (ngSubmit)=" onDonate()">
+      <div>
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label>Enter email address</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" maxlength="50" clearInput="true" required="true"
+            formControlName="email">
+          </ion-input>
+        </ion-item>
+        <div *ngIf="(form.get('email').invalid && (form.get('email')).touched) || (form.get('email')).dirty">
+          <small *ngIf="(form.get('email')).errors?.required" class="fields">This field is required</small>
+          <!--question mark(?) is a safe navigation operator-->
+          <small *ngIf="(form.get('email')).errors?.pattern" class="fields">Please provide a valid email
+            address</small>
+        </div>
+      </div>
+
+      <div>
+        <ion-icon name="cash-outline"></ion-icon>
+        <ion-item>
+          <ion-label>Enter amount</ion-label>
+          <ion-input type="number" [(ngModel)]="amount" inputmode="numeric" name="amount" placeholder="R10"
+            clearInput="true" required="true" formControlName="amount"></ion-input>
+        </ion-item>
+        <small *ngIf="form.get('amount').invalid && (form.get('amount').dirty ||form.get('amount').touched )">
+          <small *ngIf="(form.get('amount')).errors?.required" class="fields">This field is required</small>
+          <!--question mark(?) is a safe navigation operator-->
+          <small *ngIf="(form.get('amount')).errors?.minlength" class="fields">Please enter more than 4
+            character</small>
+        </small>
+      </div>
+
+      <div class="action-buttons">
+         <ion-button [disabled]="!form.valid" type="submit" mode="ios" angular4-paystack [email]="email"
+          [amount]="amount * 100" [currency]="'ZAR'" [ref]="reference" (paymentInit)="paymentInit()"
+          (onClose)="paymentCancel()" (callback)="paymentDone($event)">
+          Donate
+        </ion-button> 
+
+        <div class="end">
+          <ion-icon class="end-icon" name="lock-closed"></ion-icon>
+          <p>
+            Secured by paystack
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

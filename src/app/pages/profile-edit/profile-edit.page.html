@@ -1,0 +1,68 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="updateProfile()">Done</ion-button>
+    </ion-buttons>
+    <ion-title mode="ios">Edit Profile</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="box">
+    <form [formGroup]="form" (ngSubmit)=" onEdit()" class="ion-padding">
+      <ion-item lines="full">
+        <ion-icon name="person-outline" class="user-icon" slot="start" size="20px"></ion-icon>
+        <ion-label class="user-info">
+          <ion-text class="user-infos">Name</ion-text><br />
+          <ion-input type="text" [(ngModel)]="name" name="name" required="true" formControlName="name"></ion-input>
+        </ion-label>
+      </ion-item>
+      <small *ngIf="form.get('name').invalid && (form.get('name').dirty ||form.get('name').touched )">
+        <small *ngIf="(form.get('name')).errors?.required" class="fields">This field is required</small>
+        <!--question mark(?) is a safe navigation operator-->
+        <small *ngIf="(form.get('name')).errors?.minlength" class="fields">Please enter more than 3 character</small>
+        <small *ngIf="(form.get('name')).errors?.maxlength" class="fields">Name should have 20 characters</small>
+      </small>
+  
+      <ion-item lines="full">
+        <ion-icon name="mail-outline" class="user-icon" slot="start" size="20px"></ion-icon>
+        <ion-label class="user-info">
+          <ion-text class="user-infos">Email Address</ion-text><br />
+          <ion-input type="text" [(ngModel)]="email" name="email" required="true" formControlName="email"
+            [disabled]="true"></ion-input>
+        </ion-label>
+      </ion-item>
+      <div *ngIf="(form.get('email').invalid && (form.get('email')).touched) || (form.get('email')).dirty">
+        <small *ngIf="(form.get('email')).errors?.required" class="fields">This field is required</small>
+        <!--question mark(?) is a safe navigation operator-->
+        <small *ngIf="(form.get('email')).errors?.pattern" class="fields">Please provide a valid email
+          address</small>
+      </div>
+  
+      <ion-item lines="full">
+        <ion-icon name="call-outline" class="user-icon" slot="start" size="20px"></ion-icon>
+        <ion-label class="user-info">
+          <ion-text class="user-infos">Phone Number</ion-text><br />
+          <ion-input type="Number" [(ngModel)]="phone" name="phone" required="true" formControlName="phone"></ion-input>
+        </ion-label>
+      </ion-item>
+      <small *ngIf="form.get('phone').invalid && (form.get('phone').dirty ||form.get('phone').touched )">
+        <small *ngIf="(form.get(' phone')).errors?.required" class="fields">This field is required</small>
+        <!--question mark(?) is a safe navigation operator-->
+        <small *ngIf="(form.get('phone')).errors?.minlength" class="fields">Please enter 10 character</small>
+      </small>
+  
+      <!-- <div class="login-form inputs">
+        <div class="action-buttons">
+          <ion-button (click)="updateProfile()" mode="ios" class="signin-btn">Edit Profile
+          </ion-button>
+        </div>
+      </div> -->
+    </form>
+  </div>
+
+</ion-content>

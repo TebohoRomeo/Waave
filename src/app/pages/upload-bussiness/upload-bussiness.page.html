@@ -1,0 +1,302 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Promoting bussinesses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="login-section ion-padding">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+      <div class="photos">Upload cover photo</div>
+      <div class="ion-text-center">
+        <ion-row no-padding>
+          <ion-col size="10" offset="1">
+            <img [src]="image" alt="this is the image" />
+          </ion-col>
+        </ion-row>
+        <ion-row no-padding>
+          <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()">Choose cover photo
+          </ion-button>
+        </ion-row>
+      </div>
+
+      <br />
+      <br />
+
+      <div class="login-form inputs">
+        <div class="photos">Personal information</div>
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">First name</ion-label>
+            <ion-input class="form-input" type="text" formControlName="name" placeholder="name"></ion-input>
+          </ion-item>
+          <small *ngIf="form.get('name').invalid && (form.get('name').dirty ||form.get('name').touched )">
+            <small *ngIf="(form.get('name')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('name')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Last name</ion-label>
+            <ion-input class="form-input" type="text" formControlName="lastName" placeholder="last name"></ion-input>
+          </ion-item>
+          <small *ngIf="form.get('lastName').invalid && (form.get('lastName').dirty ||form.get('lastName').touched )">
+            <small *ngIf="(form.get('lastName')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('lastName')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">email address</ion-label>
+            <ion-input class="form-input" type="email" formControlName="email" placeholder="email address"></ion-input>
+          </ion-item>
+          <div *ngIf="(form.get('email').invalid && (form.get('email')).touched) || (form.get('email')).dirty">
+            <small *ngIf="(form.get('email')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('email')).errors?.pattern" class="fields">Please provide a valid email
+              address</small>
+          </div>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Phone numbers</ion-label>
+            <ion-input class="form-input" type="number" formControlName="phone" placeholder="phone numbers"></ion-input>
+          </ion-item>
+          <small *ngIf="form.get('phone').invalid && (form.get('phone').dirty ||form.get('phone').touched )">
+            <small *ngIf="(form.get(' phone')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('phone')).errors?.minlength" class="fields">Please enter 10 character</small>
+          </small>
+        </div>
+
+        <div class="photos">Bussiness information</div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Bussiness name</ion-label>
+            <ion-input class="form-input" type="text" formControlName="companyName"
+              placeholder="Registered Bussiness Name">
+            </ion-input>
+          </ion-item>
+          <small
+            *ngIf="form.get('companyName').invalid && (form.get('companyName').dirty ||form.get('companyName').touched )">
+            <small *ngIf="(form.get('companyName')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('companyName')).errors?.minlength" class="fields">Please enter more than 4
+              character</small>
+          </small>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Bussiness email address</ion-label>
+            <ion-input class="form-input" type="email" formControlName="bemail" placeholder="Bussiness email address">
+            </ion-input>
+          </ion-item>
+          <div *ngIf="(form.get('bemail').invalid && (form.get('bemail')).touched) || (form.get('bemail')).dirty">
+            <small *ngIf="(form.get('email')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('bemail')).errors?.pattern" class="fields">Please provide a valid email
+              address</small>
+          </div>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Bussiness Phone numbers</ion-label>
+            <ion-input class="form-input" type="number" formControlName="bphone" placeholder="Bussiness phone numbers">
+            </ion-input>
+          </ion-item>
+          <small *ngIf="form.get('bphone').invalid && (form.get('bphone').dirty ||form.get('bphone').touched )">
+            <small *ngIf="(form.get('phone')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('bphone')).errors?.minlength" class="fields">Please enter 10 character</small>
+          </small>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Bussiness Whatsapp numbers</ion-label>
+            <ion-input class="form-input" type="number" formControlName="wapp" placeholder="Bussiness Whatsapp numbers">
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Bussiness address</ion-label>
+            <ion-input class="form-input" type="text" formControlName="address" placeholder="Bussiness address">
+            </ion-input>
+          </ion-item>
+          <small *ngIf="form.get('address').invalid && (form.get('address').dirty ||form.get('address').touched )">
+            <small *ngIf="(form.get('address')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('address')).errors?.minlength" class="fields">Please enter more than 4
+              character</small>
+          </small>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Postal code</ion-label>
+            <ion-input class="form-input" type="number" formControlName="postal" placeholder="Postal code"></ion-input>
+
+          </ion-item>
+          <small *ngIf="form.get('postal').invalid && (form.get('postal').dirty ||form.get('postal').touched )">
+            <small *ngIf="(form.get('postal')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('postal')).errors?.minlength" class="fields">Please enter more than 4
+              character</small>
+          </small>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">City</ion-label>
+            <ion-input class="form-input" type="text" formControlName="city" placeholder="City"></ion-input>
+          </ion-item>
+          <small *ngIf="form.get('city').invalid && (form.get('city').dirty ||form.get('city').touched )">
+            <small *ngIf="(form.get('city')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('city')).errors?.minlength" class="fields">Please enter more than 3
+              character</small>
+          </small>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Country</ion-label>
+            <ion-input class="form-input" type="text" formControlName="country" placeholder="country"></ion-input>
+          </ion-item>
+          <small *ngIf="form.get('country').invalid && (form.get('country').dirty ||form.get('country').touched )">
+            <small *ngIf="(form.get('country')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('country')).errors?.minlength" class="fields">Please enter more than 4
+              character</small>
+          </small>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Bussiness website</ion-label>
+            <ion-input class="form-input" type="text" formControlName="website" placeholder="Bussiness website">
+            </ion-input>
+          </ion-item>
+          <small *ngIf="form.get('website').invalid && (form.get('website').dirty ||form.get('website').touched )">
+            <small *ngIf="(form.get('website')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('website')).errors?.minlength" class="fields">Please enter more than 4
+              character</small>
+          </small>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed"></ion-label>
+            <textarea placeholder="About your bussiness" formControlName="aboutCompany"></textarea>
+          </ion-item>
+          <small
+            *ngIf="form.get('aboutCompany').invalid && (form.get('aboutCompany').dirty ||form.get('aboutCompany').touched )">
+            <small *ngIf="(form.get('aboutCompany')).errors?.required" class="fields">This field is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('aboutCompany')).errors?.minlength" class="fields">Please enter more than 50
+              character</small>
+          </small>
+        </div>
+
+        <br />
+        <br />
+
+
+        <div class="photos">Upload your products</div>
+        <div class="ion-text-center">
+          <ion-row no-padding>
+            <ion-col size="10" offset="1">
+              <img [src]="productOne" alt="this is the image" />
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+            <ion-button fill="outline" expand="block" size="small" (click)="imageForProductOne()">Upload product
+            </ion-button>
+          </ion-row>
+        </div>
+        <br>
+
+        <div class="ion-text-center">
+          <ion-row no-padding>
+            <ion-col size="10" offset="1">
+              <img [src]="  productTwo" alt="this is the image" />
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+            <ion-button fill="outline" expand="block" size="small" (click)="imageForproductTwo()">Upload product
+            </ion-button>
+          </ion-row>
+        </div>
+        <br>
+
+        <div class="ion-text-center">
+          <ion-row no-padding>
+            <ion-col size="10" offset="1">
+              <img [src]="producthree" alt="this is the image" />
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+            <ion-button fill="outline" expand="block" size="small" (click)="imageForproducthree()">Upload product
+            </ion-button>
+          </ion-row>
+        </div>
+        <br>
+
+        <div class="ion-text-center">
+          <ion-row no-padding>
+            <ion-col size="10" offset="1">
+              <img [src]="productfour" alt="this is the image" />
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+            <ion-button fill="outline" expand="block" size="small" (click)="imageForproductfour()">Upload product
+            </ion-button>
+          </ion-row>
+        </div>
+        <br>
+        <br />
+
+        <br />
+
+        <div class="note">
+          <ul class="ion-padding">
+            <li>You will be charged R120 for you bussiness to be promoted on our app</li>
+          </ul>
+        </div>
+
+        <div class="login-form inputs">
+          <div class="action-buttons">
+            <ion-button [disabled]="!form.valid" type="submit" mode="ios" class="signin-btn">Submit
+            </ion-button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+</ion-content>

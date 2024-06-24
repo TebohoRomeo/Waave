@@ -1,0 +1,49 @@
+ion-item {
+  --background: #222428;
+}
+
+ion-button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ion-input {
+  color: #ffffff;
+}
+
+.user-infos {
+  font-weight: 500;
+  color: #989aa2;
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.user-info h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.user-icon {
+  color: #16994a;
+  font-size: 25px;
+}
+
+
+.header {
+  --background: #222428;
+}
+
+.fields {
+  color: #eb445a;
+  font-size: 12px;
+  padding-left: 70px;
+}
+
+.box{
+  margin: 5px;
+  border-radius: 10px;
+  background: #000000;
+}

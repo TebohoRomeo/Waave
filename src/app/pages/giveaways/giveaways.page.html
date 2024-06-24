@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-title class="ion-text-center" mode="ios" class="titles">Giveaways</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollEvents="{true}" fullscreen="true">
+  <div class="responsive">
+    <div *ngIf="datas">
+      <div class="create-campaign">
+        <ion-row>
+          <ion-col size="5">
+            <img src="../../../assets/icon/give-away.png" />
+          </ion-col>
+
+          <ion-col>
+            <p>First come first serve</p>
+            <ion-button mode="ios" expand="block" (click)="Airtime()" (click)="showRewardVideoAds()">Prepaid airtime
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <ion-text color="primary">
+        <h3 style="padding: 10px">Giveaways</h3>
+      </ion-text>
+
+      <ion-row>
+        <ion-col size="6">
+          <div class="cards ion-text-center" (click)="showInterstitialAds()" (click)="Airtime()">
+            <img src="../../../assets/icon/icons8-prepaid-recharge-100.png" />
+            <h4 class="title">Prepaid airtime</h4>
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <div class="cards ion-text-center" (click)="showRewardVideoAds()" (click)="GoToVouchers()">
+            <img src="../../../assets/icon/icons8-voucher-160.png" />
+            <h4 class="title">Food voucher</h4>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <div class="cards ion-text-center" (click)="showInterstitialAds()" (click)="GoToElectricity()">
+            <img src="../../../assets/icon/icons8-electricity-80.png" />
+            <h4 class="title">Electricity</h4>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div *ngIf="!datas">
+      <div class="ion-padding custom-skeleton">
+        <ion-skeleton-text animated style="width: 100%; height: 130px" slot="start"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 50%; height: 130px" slot="start"></ion-skeleton-text>
+      </div>
+    </div>
+  </div>
+</ion-content>

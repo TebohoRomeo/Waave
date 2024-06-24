@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Live Fundraisers</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="header">
+    <ion-searchbar mode="ios" disabled="true" debounce="500" animated placeholder="Search for live fundraisers">
+    </ion-searchbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+
+    <ion-fab-button>
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top" color="primary">
+      <ion-fab-button color="primary"(click)="updates()">
+        <ion-icon name="refresh-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+    </ion-fab-list>
+  </ion-fab>
+
+  <div *ngIf="data">
+    <div lines="inset" *ngIf="items">
+      <div *ngIf="items.length > 0">
+        <div *ngFor="let item of items" [routerLink]="['/details', item.payload.doc.id]">
+
+          <div class="campaing-live">
+            <img [src]="item.payload.doc.data().image">
+            <h5 class="description">{{item.payload.doc.data().title}}</h5>
+
+            <div class="money ion-text-center">
+              <ion-row>
+                <ion-col size="3">
+                  <ion-label class="cash-title">Benefactors</ion-label>
+                  <br>
+                  <ion-label class="cash-title-two"> {{item.payload.doc.data().benefactors}}</ion-label>
+                </ion-col>
+                <ion-col>
+                  <ion-label class="cash-title">Raised</ion-label>
+                  <br>
+                  <ion-label class="cash-title-two"> R {{item.payload.doc.data().raisedAmount}}</ion-label>
+                </ion-col>
+                <ion-col>
+                  <ion-label class="cash-title">Goal</ion-label>
+                  <br>
+                  <ion-label class="cash-title-two"> R {{item.payload.doc.data().targetAmount}}</ion-label>
+                </ion-col>
+              </ion-row>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="!data">
+    <div class="ion-padding custom-skeleton">
+      <ion-skeleton-text animated style="width: 100%; height: 300px" slot="start"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 100%; height: 300px" slot="start"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 100%; height: 300px" slot="start"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 100%; height: 300px" slot="start"></ion-skeleton-text>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-tabs (ionTabsDidChange)="setSelectedTab()" mode="ios">
+  <ion-tab-bar slot="bottom" class="ion-no-border">
+    <ion-tab-button class="slides" tab="home">
+      <ion-icon [name]="selected === 'home' ? 'home' : 'home-outline'"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="bussiness">
+      <ion-icon [name]="selected === 'business' ? 'business' : 'business-outline'"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="createFundraiser()">
+      <ion-icon [name]="selected === 'create' ? 'create' : 'create-outline'"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button class="slides" tab="support">
+      <ion-icon [name]="selected === 'heart' ? 'heart' : 'heart-outline'"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button class="slides" tab="profile">
+      <ion-icon [name]="selected === 'person' ? 'person' : 'person-outline'"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

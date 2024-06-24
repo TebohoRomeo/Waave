@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-title class="ion-text-center" mode="ios" class="title">Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content [fullscreen]="true" mode="ios">
+
+    <ion-item lines="none">
+      <ion-label class="settings">
+        General
+      </ion-label>
+    </ion-item>
+
+    <div class="buttons">
+      <ion-item lines="none" button *ngIf="auth.canEdit(user)" slot="end" (click)="goToAdmin()" class="button">
+        <label class="label">X NOMAYINI</label>
+        <ion-icon name="person-outline" slot="start" class="user-icon"></ion-icon>
+      </ion-item>
+    </div>
+
+    <div class="buttons">
+      <ion-item lines="none" button (click)="changePassword()" class="button">
+        <label class="label">Change Password</label>
+        <ion-icon name="lock-closed-outline" slot="start" class="user-icon"></ion-icon>
+      </ion-item>
+    </div>
+
+    <ion-item lines="none">
+      <ion-label class="settings">
+        Help
+      </ion-label>
+    </ion-item>
+
+    <div class="buttons">
+      <ion-item lines="none" button (click)="goTofrequently()" class="button">
+        <label class="label">Frequently asked Questions</label>
+        <ion-icon name="help-outline" slot="start" class="user-icon"></ion-icon>
+      </ion-item>
+    </div>
+
+    <div class="buttons">
+      <ion-item lines="none" button (click)="goToterms()" class="button">
+        <label class="label">Terms and conditions</label>
+        <ion-icon name="document-text-outline" slot="start" class="user-icon"></ion-icon>
+      </ion-item>
+    </div>
+
+    <div class="buttons">
+      <ion-item lines="none" button (click)="goToPrivacy()" class="button">
+        <label class="label">Privacy Policy</label>
+        <ion-icon name="shield-half-outline" slot="start" class="user-icon"></ion-icon>
+      </ion-item>
+    </div>
+
+    <ion-item lines="none">
+      <ion-label class="settings">
+        Exit
+      </ion-label>
+    </ion-item>
+
+    <div class="buttons">
+      <ion-item lines="none" button (click)="alertLogout()" class="button">
+        <label class="label">Logout</label>
+        <ion-icon name="exit-outline" slot="start" class="user-icon"></ion-icon>
+      </ion-item>
+    </div>
+  </ion-content>

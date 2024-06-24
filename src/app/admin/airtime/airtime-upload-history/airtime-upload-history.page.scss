@@ -1,0 +1,75 @@
+ion-content {
+  --background: #222428;
+
+}
+
+ion-item {
+  --background: #222428;
+}
+
+.header {
+  --background: #222428;
+}
+
+.title {
+  --color: #16994a;
+}
+
+div[scrollx=true] {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-item {
+    flex: 0 0 auto;
+  }
+}
+
+.styled-table {
+  border-collapse: collapse;
+  overflow: scroll;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 600px;
+
+}
+
+.styled-table thead tr {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr {
+  background-color: #363636;
+  color: #fff;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #b8b8b8;
+  color: rgb(0, 0, 0);
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #16994a;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #ffffff;
+}

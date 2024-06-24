@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Fundraiser history</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="items" class="list-mini-content" class="ion-padding ion-text-center">
+  <div *ngIf="items.length > 0" class="list-mini">
+
+    <div class="scroll" scrollX="true">
+      <table class="styled-table ">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Reference</th>
+            <th>Target amount</th>
+            <th>Amount raised</th>
+            <th>Benefectors</th>
+            <th>Ending date</th>
+            <th>Bank account</th>
+            <th>Bank name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items" [routerLink]="['/fundraiser-upload-edit', item.payload.doc.id]">
+            <td>{{item.payload.doc.data().receiverName}}</td>
+            <td>{{item.payload.doc.data().title}}</td>
+            <td>{{item.payload.doc.data().references}}</td>
+            <td>{{item.payload.doc.data().targetAmount }}</td>
+            <td>{{item.payload.doc.data().raisedAmount}}</td>
+            <td>{{item.payload.doc.data().benefactors}}</td>
+            <td>{{item.payload.doc.data().endingDAte}}</td>
+            <td>{{item.payload.doc.data().bankAccount}}</td>
+            <td>{{item.payload.doc.data().bankName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</ion-content>

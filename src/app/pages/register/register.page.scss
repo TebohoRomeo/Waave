@@ -1,0 +1,135 @@
+
+// .form-content {
+//   --background: #ffffff;
+// }
+
+.login-section {
+  height: 31.5rem;
+  width: 95%;
+  max-width: 800px;
+  // background: rgb(255, 255, 255);
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 20px;
+  .heading {
+    margin-top: 5px;
+
+    h1 {
+      font-size: 1.2rem;
+      font-weight: bolder;
+    }
+  }
+
+  .login-form {
+    .form-input {
+      position: relative;
+
+      ion-icon {
+        position: relative;
+        top: 37px;
+        z-index: 2;
+        font-size: 1.2rem;
+        color: #999999;
+        left: 5px;
+        color: #16994a;
+      }
+      ion-label {
+        position: absolute;
+        margin-left: 35px;
+        font-size: 0.8rem;
+        top: 3.5px;
+        color: #5c5c5c;
+        font-weight: 600;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+
+      ion-input {
+        font-size: 0.9rem;
+        --padding-start: 36px;
+        --padding-top: 36px;
+        color: #7b7b7b;
+      }
+    }
+  }
+
+  .action-buttons {
+    text-align: center;
+
+    ion-button {
+      --border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 25px;
+      height: 50px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+  }
+}
+
+.forgot-password a {
+  color: #222428;
+  font-weight: 200;
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header {
+  margin-top: 3rem;
+}
+
+a {
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.signIn {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.create-account {
+  padding-top: 10px;
+  font-weight: 1px;
+  font-size: 13px;
+}
+
+// .card {
+//   margin-top: 10%;
+// }
+
+// .footer {
+//   font-size: 14px;
+//   color: #fff;
+// }
+
+.header img{
+  width: 50px;
+}
+
+ion-footer {
+  ion-row {
+    padding-top: 5vh;
+    // background: transparent;
+    display: block;
+    ion-list {
+      border-radius: 20px 20x 0 0;
+      ion-list-header {
+        io-label {
+          font-weight: bold;
+          font-size: 1.8em;
+        }
+      }
+    }
+  }
+}

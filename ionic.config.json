@@ -1,0 +1,10 @@
+{
+  "name": "X Benefactor",
+  "integrations": {
+    "capacitor": {
+      "enabled": true
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

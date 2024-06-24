@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-row *ngIf="data">
+    <ion-col class="ion-padding" size="9">
+      <ion-label>
+        <h1>{{user?.userName}}</h1>
+      </ion-label>
+      <ion-row>
+        <ion-button shape="round" *ngIf="auth.canEdit(user)" (click)="goToAdmin()" color="medium">Admin Dashboard</ion-button>
+      </ion-row>
+    </ion-col>
+    <ion-row *ngIf="!data">
+      <div class="ion-padding custom-skeleton">
+        <ion-skeleton-text animated style="width: 100%; height: 150px" slot="start"></ion-skeleton-text>
+  
+        <ion-skeleton-text animated style="width: 100%; height: 100px" slot="start"></ion-skeleton-text>
+  
+        <ion-skeleton-text animated style="width: 100%; height: 100px" slot="start"></ion-skeleton-text>
+  
+        <ion-skeleton-text animated style="width: 30%; height: 30px" slot="start"></ion-skeleton-text>
+      </div>
+    </ion-row>
+    <ion-col size="3">
+      <!-- <ion-avatar>
+        <ion-icon name="person-outline"></ion-icon>
+        <img src="../../../assets/img/model_1.png" alt="Picture">
+      </ion-avatar> -->
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-label class="ion-margin-horizontal">
+      <p> {{user?.userEmail}}</p>
+      <p> {{user?.createdAt | date}}</p>
+    </ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button expand="block" color="dark" (click)="editProfile()">Edit profile</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content>
+
+</ion-content>

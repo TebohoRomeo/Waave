@@ -1,0 +1,164 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Upload Bussiness </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="login-section ion-padding">
+
+
+    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+
+      <div class="photos">Upload cover photo</div>
+      <div class="ion-text-center">
+        <ion-row no-padding>
+          <ion-col size="10" offset="1">
+            <img [src]="image" alt="this is the image" />
+          </ion-col>
+        </ion-row>
+        <ion-row no-padding>
+          <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()">Choose cover photo
+          </ion-button>
+        </ion-row>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="login-form inputs">
+
+        <div class="photos">Bussiness information</div>
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Company name</ion-label>
+            <ion-input class="form-input" type="text" formControlName="name" placeholder="name"></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Website</ion-label>
+            <ion-input class="form-input" type="text" formControlName="website" placeholder="website"></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Location</ion-label>
+            <ion-input class="form-input" type="text" formControlName="location" placeholder="location"></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Email</ion-label>
+            <ion-input class="form-input" type="text" formControlName="email" placeholder="email"></ion-input>
+          </ion-item>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Phone Numbers</ion-label>
+            <ion-input class="form-input" type="text" formControlName="call" placeholder="Phone numbers"></ion-input>
+          </ion-item>
+        </div>
+
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Whatsapp Numbers</ion-label>
+            <ion-input class="form-input" type="text" formControlName="wapp" placeholder="Whatsapp Phone numbers"></ion-input>
+          </ion-item>
+        </div>
+
+
+        <div class="photos">More about your bussiness</div>
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed"></ion-label>
+            <textarea placeholder="Summary about your bussiness" maxlength="150"
+              formControlName="summaryAboutCompany"></textarea>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed"></ion-label>
+            <textarea placeholder="About your bussiness" maxlength="500" formControlName="aboutCompany"></textarea>
+          </ion-item>
+        </div>
+        <br />
+
+        <div class="photos">Upload your products</div>
+        <div class="ion-text-center">
+          <ion-row no-padding>
+            <ion-col size="10" offset="1">
+              <img [src]="productOne" alt="this is the image" />
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+            <ion-button fill="outline" expand="block" size="small" (click)="imageForProductOne()">Upload product
+            </ion-button>
+          </ion-row>
+        </div>
+        <br>
+
+        <div class="ion-text-center">
+          <ion-row no-padding>
+            <ion-col size="10" offset="1">
+              <img [src]="  productTwo" alt="this is the image" />
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+            <ion-button fill="outline" expand="block" size="small" (click)="imageForproductTwo()">Upload product
+            </ion-button>
+          </ion-row>
+        </div>
+        <br>
+
+        <div class="ion-text-center">
+          <ion-row no-padding>
+            <ion-col size="10" offset="1">
+              <img [src]="producthree" alt="this is the image" />
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+            <ion-button fill="outline" expand="block" size="small" (click)="imageForproducthree()">Upload product
+            </ion-button>
+          </ion-row>
+        </div>
+        <br>
+
+        <div class="ion-text-center">
+          <ion-row no-padding>
+            <ion-col size="10" offset="1">
+              <img [src]="productfour" alt="this is the image" />
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding>
+            <ion-button fill="outline" expand="block" size="small" (click)="imageForproductfour()">Upload product
+            </ion-button>
+          </ion-row>
+        </div>
+        <br>
+        <br />
+
+        <div class="login-form inputs">
+          <div class="action-buttons">
+            <ion-button [disabled]="!validations_form.valid" type="submit" mode="ios" class="signin-btn">Upload
+              Bussiness
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</ion-content>

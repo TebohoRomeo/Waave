@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Airtime history</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding ion-text-center">
+
+  <div class="scroll" scrollX="true">
+    <table class="styled-table ">
+      <thead>
+        <tr>
+          <th>Voucher Network</th>
+          <th>Airtime Or Data</th>
+          <th>Voucher code</th>
+          <th>Time</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records; let i = index">
+          <td>{{record.airtimeTpye}}</td>
+          <td>{{record.voucherType}}</td>
+          <td>{{record.voucherCode}}</td>
+          <td>{{record.timeUpdate}}</td>
+          <td>
+            <ion-button size="small" color="primary"
+              (click)="UpdateRecord(record.id, record.type, record.airtimeTpye, record.voucherType)">
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-button>
+          </td>
+          <td>
+            <ion-button size="small" color="danger" (click)="DeleteRecord(record.id)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

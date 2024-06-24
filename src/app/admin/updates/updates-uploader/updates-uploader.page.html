@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Updates</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="login-section ion-padding">
+
+
+    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+
+      <div class="photos">Upload cover photo</div>
+      <div class="ion-text-center">
+        <ion-row no-padding>
+          <ion-col size="10" offset="1">
+            <img [src]="image" alt="this is the image" />
+          </ion-col>
+        </ion-row>
+        <ion-row no-padding>
+          <ion-button fill="outline" expand="block" size="small" (click)="openImagePicker()">Choose cover photo
+          </ion-button>
+        </ion-row>
+      </div>
+      <div class="login-form inputs">
+        <br />
+        <div class="photos">General information</div>
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">First name</ion-label>
+            <ion-input class="form-input" type="text" formControlName="receiverName" placeholder="name"></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">What are you fundraising for?</ion-label>
+            <ion-input class="form-input" type="text" formControlName="title"
+              placeholder="What are you fundraising for?"></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed"></ion-label>
+            <textarea maxlength="150" placeholder="Story summary"
+              formControlName="storysummary"></textarea>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed"></ion-label>
+            <textarea placeholder="Tell us why are you raising this money in a paragraph of 100 minimun words"
+              formControlName="description"></textarea>
+          </ion-item>
+        </div>
+
+        <br />
+        <div class="login-form inputs">
+          <div class="action-buttons">
+            <ion-button [disabled]="!validations_form.valid" type="submit" mode="ios" class="signin-btn">Save Updates
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</ion-content>

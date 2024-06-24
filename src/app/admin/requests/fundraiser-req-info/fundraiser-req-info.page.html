@@ -1,0 +1,268 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title"
+      >Fundraiser Requests Info</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <div class="ion-text-center">
+    <ion-row no-padding>
+      <ion-col size="6" offset="3">
+        <img [src]="image" alt="choose cover photo" />
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="login-section ion-padding">
+    <form
+      [formGroup]="validations_form"
+      (ngSubmit)="onSubmit(validations_form.value)"
+    >
+      <div class="login-form inputs">
+        <div class="photos">Personal information</div>
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">First name</ion-label>
+            <ion-input
+              class="form-input"
+              type="text"
+              formControlName="name"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Last name</ion-label>
+            <ion-input
+              class="form-input"
+              type="text"
+              formControlName="lastName"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">email address</ion-label>
+            <ion-input
+              class="form-input"
+              type="email"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Phone numbers</ion-label>
+            <ion-input
+              class="form-input"
+              type="number"
+              formControlName="phone"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="photos">Address</div>
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Home address</ion-label>
+            <ion-input
+              class="form-input"
+              type="text"
+              formControlName="address"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Postal code</ion-label>
+            <ion-input
+              class="form-input"
+              type="number"
+              formControlName="postal"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">City</ion-label>
+            <ion-input
+              class="form-input"
+              type="text"
+              formControlName="city"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Country</ion-label>
+            <ion-input
+              class="form-input"
+              type="text"
+              formControlName="country"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="photos">Fundraiser</div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed"
+              >What are you fundraising for?</ion-label
+            >
+            <ion-select
+              class="form-input select"
+              type="text"
+              formControlName="fundraising"
+              slot="end"
+            >
+              <ion-select-option value="Bussiness">Bussiness</ion-select-option>
+              <ion-select-option value="Charity">Charity</ion-select-option>
+              <ion-select-option value="Education">Education</ion-select-option>
+              <ion-select-option value="Emergency">Emergency</ion-select-option>
+              <ion-select-option value="Medical Health"
+                >Medical Health</ion-select-option
+              >
+              <ion-select-option value="Sport">Sport</ion-select-option>
+              <ion-select-option value="Other">Other</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Other</ion-label>
+            <ion-input
+              class="form-input"
+              type="text"
+              formControlName="other"
+              placeholder="If other specify"
+            >
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Amount</ion-label>
+            <ion-input
+              class="form-input"
+              type="number"
+              formControlName="money"
+              placeholder="R3000"
+            >
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-list class="contact-input ion-margin-bottom">
+            <ion-datetime
+              class="form-input"
+              formControlName="dob"
+              placeholder="Fundraiser ending date?"
+              displayFormat="MM/DD/YYYY"
+              min="2022-03-14"
+              max="2023-12-31"
+            >
+            </ion-datetime>
+          </ion-list>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed"></ion-label>
+            <textarea
+              placeholder="Tell us why are you raising this money in a paragraph of 100 minimun words"
+              formControlName="story"
+            ></textarea>
+          </ion-item>
+        </div>
+
+        <br />
+        <div class="photos">Bank information</div>
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Bank name</ion-label>
+            <ion-input
+              class="form-input"
+              formControlName="bankName"
+              placeholder="nedbank"
+            >
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Bank account</ion-label>
+            <ion-input
+              class="form-input"
+              type="number"
+              formControlName="bankAccount"
+              placeholder="5554544414"
+            >
+            </ion-input>
+          </ion-item>
+        </div>
+        <br />
+
+        <div class="photos">Status</div>
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Reviewed</ion-label>
+            <ion-select class="form-input select" type="text" formControlName="reviewed" slot="end">
+              <ion-select-option value="Yes">Yes</ion-select-option>
+              <ion-select-option value="No">No</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <div class="form-input">
+          <ion-item class="contact-input ion-margin-bottom" mode="md">
+            <ion-label position="fixed">Live</ion-label>
+            <ion-select class="form-input select" type="text" formControlName="live" slot="end">
+              <ion-select-option value="Yes">Yes</ion-select-option>
+              <ion-select-option value="No">No</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+        <br />
+        <br />
+      </div>
+      <div class="login-form inputs">
+        <ion-row>
+          <ion-col>
+            <ion-button
+              class="submit-button"
+              expand="block"
+              type="submit"
+              [disabled]="!validations_form.valid"
+              >Save
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button
+              class="delete-button"
+              expand="block"
+              color="danger"
+              (click)="delete()"
+              >Delete</ion-button
+            >
+          </ion-col>
+        </ion-row>
+      </div>
+    </form>
+  </div>
+</ion-content>

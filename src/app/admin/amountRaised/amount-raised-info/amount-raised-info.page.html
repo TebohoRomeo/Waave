@@ -1,0 +1,40 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Raised amount</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding ion-text-center">
+
+  <div class="scroll" scrollX="true">
+    <table class="styled-table ">
+      <thead>
+        <tr>
+          <th>description</th>
+          <th>Amount Raised</th>
+          <th>Edit</th>
+          <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records; let i = index">
+          <td>{{record.story}}</td>
+          <td>{{record.amount}}</td>
+
+          <td>
+            <ion-button size="small" color="primary" (click)="UpdateRecord(record.id, record.story, record.amount)">
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-button>
+          </td>
+          <td>
+            <ion-button size="small" color="danger" (click)="DeleteRecord(record.id)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>

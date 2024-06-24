@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="title"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" mode="ios" class="title">Fundraiser Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="items" class="list-mini-content" class="ion-padding ion-text-center">
+  <div *ngIf="items.length > 0" class="list-mini">
+
+    <div class="scroll" scrollX="true">
+      <table class="styled-table ">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Phone</th>
+            <th>Email Address</th>
+            <th>Fundraiser</th>
+            <th>Other</th>
+            <th>Amount</th>
+            <th>Ending date</th>
+            <th>Bank name</th>
+            <th>Bank account</th>
+            <th>Reviewed</th>
+            <th>Live</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items" [routerLink]="['/fundraiser-req-info', item.payload.doc.id]">
+            <td>{{item.payload.doc.data().name}}</td>
+            <td>{{item.payload.doc.data().lastName}}</td>
+            <td>{{item.payload.doc.data().phone}}</td>
+            <td>{{item.payload.doc.data().email}}</td>
+            <td>{{item.payload.doc.data().fundraising}}</td>
+            <td>{{item.payload.doc.data().other}}</td>
+            <td>R{{item.payload.doc.data().money}}</td>
+            <td>{{item.payload.doc.data().dob}}</td>
+            <td>{{item.payload.doc.data().bankName}}</td>
+            <td>{{item.payload.doc.data().bankAccount}}</td>
+            <td>{{item.payload.doc.data().reviewed}}</td>
+            <td>{{item.payload.doc.data().live}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</ion-content>

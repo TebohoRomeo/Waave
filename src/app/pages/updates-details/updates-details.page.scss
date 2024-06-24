@@ -1,0 +1,236 @@
+ion-content {
+  --background: #222428;
+}
+
+ion-button {
+  --border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  height: 50px;
+  margin-top: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ion-input {
+  color: #ffffff;
+}
+
+.header {
+  --background: #222428;
+}
+
+.titles {
+  --color: #16994a;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.donate {
+  max-width: 500px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+.heading p {
+  font-weight: 700;
+  font-size: 20px;
+  padding-left: 10px;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.story p {
+  font-weight: 500;
+  padding-top: 20px;
+  font-size: 15px;
+  margin: 10px;
+  margin-bottom: 100px;
+  color: rgb(255, 255, 255);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.amount ion-label {
+  font-weight: 400;
+  padding-top: 20px;
+  font-size: 18px;
+  margin: 10px;
+  padding-top: 300px;
+  color: #16994a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.user-img img {
+  border-radius: 10px;
+  margin: 2%;
+  width: 96%;
+}
+
+ion-card {
+  border-radius: 10px;
+}
+
+.cards {
+  border-radius: 10px;
+  background: #363636;
+  width: 99%;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 25px;
+  height: 70px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.cards img {
+  height: 30px;
+  margin: 5px;
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+}
+
+.title {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-left: 55px;
+  margin-bottom: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.target {
+  font-size: 12px;
+  padding-left: 10px;
+  color: #737373;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.fundraising {
+  font-weight: 700;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 15px;
+  color: #16994a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.donate-btn {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.fields {
+  color: #eb445a;
+  padding-left: 50px;
+  font-size: 12px;
+}
+
+.login-section {
+  height: 55%;
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  ion-icon {
+    position: relative;
+    top: 35px;
+    z-index: 2;
+    font-size: 1.2rem;
+    color: #16994a;
+    left: 18px;
+  }
+
+  ion-label {
+    position: absolute;
+    margin-left: 35px;
+    font-size: 0.8rem;
+    top: 3px;
+    color: #989aa2;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  ion-input {
+    font-size: 15px;
+    --padding-start: 36px;
+    --padding-top: 36px;
+    color: #000000;
+    font-weight: 400;
+  }
+}
+
+.action-buttons {
+  text-align: center;
+
+  ion-button {
+    --border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 17px;
+    height: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+}
+ion-button:hover {
+  --background: #1d924c;
+}
+
+.ending {
+  padding-top: 55px;
+}
+
+.date {
+  color: #737373;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.dates {
+  color: #000000;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.donate-btn p {
+  color: #000000;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.end-icon {
+  margin-right: 2.2rem;
+  --color: #eb445a;
+}
+
+.end p {
+  font-size: 14px;
+  padding-top: 18px;
+  color: #989aa2;
+  font-weight: 400;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

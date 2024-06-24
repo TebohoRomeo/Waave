@@ -1,0 +1,133 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" class="titles"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-label class="end-btn" slot="end">
+        <ion-icon color="primary" name="share-social-outline" slot="end" class="top-icons"></ion-icon>
+      </ion-label>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="donate">
+    <div class="heading">
+      <p>Let us help {{receiverName}}</p>
+    </div>
+
+    <div class="user-img">
+      <img [src]="image" alt="this is the image">
+    </div>
+
+    <ion-row>
+      <ion-col size="6">
+        <div class="cards">
+          <img src="../../../assets/icon/financial-advisor.png" />
+          <h4 class="title">R {{targetAmount}}</h4>
+          <ion-label class="target">Target amount</ion-label>
+        </div>
+      </ion-col>
+
+      <ion-col>
+        <div class="cards">
+          <img src="../../../assets/icon/data.png" />
+          <h4 class="title">R {{raisedAmount}}</h4>
+          <ion-label class="target">Raised so far</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <div class="fundraising">
+      <p>
+        {{title}}
+      </p>
+    </div>
+    <div class="story">
+      <p>
+        {{description}}
+      </p>
+
+    </div>
+
+    <div class="login-section ion-padding">
+      <div class="donate-btn">
+        <p>Reference: {{references}}</p>
+        <form [formGroup]="form" (ngSubmit)=" onDonate()">
+          <div>
+            <ion-icon name="document-text-outline"></ion-icon>
+            <ion-item lines="none">
+              <ion-label>Enter reference</ion-label>
+              <ion-input type="name" [(ngModel)]="name" name="name" maxlength="30" clearInput="true"
+                placeholder="eg usernameXB01" formControlName="ref">
+              </ion-input>
+            </ion-item>
+            <small *ngIf="form.get('ref').invalid && (form.get('ref').dirty ||form.get('ref').touched )">
+              <small *ngIf="(form.get('ref')).errors?.required" class="fields">Reference must be in this format
+                UsernameXB01</small>
+              <small *ngIf="(form.get('ref')).errors?.maxlength" class="fields">Reference must be in this format
+                UsernameXB01</small>
+            </small>
+          </div>
+
+
+          <div>
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-item>
+              <ion-label>Enter email address</ion-label>
+              <ion-input type="email" [(ngModel)]="email" name="email" maxlength="50" clearInput="true"
+                placeholder="Enter email" formControlName="email">
+              </ion-input>
+            </ion-item>
+            <div *ngIf="(form.get('email').invalid && (form.get('email')).touched) || (form.get('email')).dirty">
+              <small *ngIf="(form.get('email')).errors?.required" class="fields">This field is required</small>
+              <small *ngIf="(form.get('email')).errors?.pattern" class="fields">Please provide a valid email
+                address</small>
+            </div>
+          </div>
+
+          <div>
+            <ion-icon name="cash-outline"></ion-icon>
+            <ion-item>
+              <ion-label>Enter amount</ion-label>
+              <ion-input type="number" [(ngModel)]="amount" inputmode="numeric" name="amount" placeholder="R10"
+                clearInput="true" formControlName="amount"></ion-input>
+            </ion-item>
+            <small *ngIf="form.get('amount').invalid && (form.get('amount').dirty ||form.get('amount').touched )">
+              <small *ngIf="(form.get('amount')).errors?.required" class="fields">This field is required</small>
+              <small *ngIf="(form.get('amount')).errors?.minlength" class="fields">Please enter more than 4
+                character</small>
+            </small>
+          </div>
+
+          <ion-row>
+            <ion-col size="6">
+              <div class="ending">
+                <ion-text class="date">Ending date</ion-text>
+                <br />
+                <ion-text class="dates">{{endingDAte}}</ion-text>
+              </div>
+            </ion-col>
+
+            <ion-col>
+              <ion-button [disabled]="!form.valid" type="submit" mode="ios" angular4-paystack [ref]="name"
+                [email]="email" [amount]="amount * 100" [currency]="'ZAR'" [ref]="reference"
+                (paymentInit)="paymentInit()" (onClose)="paymentCancel()" (callback)="paymentDone($event)">
+                Donate
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </form>
+        <div class="end ion-text-center">
+          <ion-icon class="end-icon" name="lock-closed"></ion-icon>
+          <p>
+            Secured by paystack
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,43 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+*~
+*.sw[mnpcod]
+.tmp
+*.tmp
+*.tmp.*
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+$RECYCLE.BIN/
+
+*.log
+log.txt
+npm-debug.log*
+
+/.idea
+/.ionic
+/.sass-cache
+/.sourcemaps
+/.versions
+/.vscode
+/coverage
+/dist
+/node_modules
+/platforms
+/plugins
+/www
+
+ionic cordova plugin add cordova-plugin-admob-free --save --variable ADMOB_APP_ID="ca-app-pub-3782350151456053~6277077620"
+
+
+ionic cordova plugin add cordova-plugin-admob-free --save --variable ADMOB_APP_ID=ca-app-pub-3782350151456053~6277077620
+ca-app-pub-3782350151456053~1883021174
+
+interster
+ca-app-pub-3782350151456053/8648638836
+
+reward
+ca-app-pub-3782350151456053/4409462189
